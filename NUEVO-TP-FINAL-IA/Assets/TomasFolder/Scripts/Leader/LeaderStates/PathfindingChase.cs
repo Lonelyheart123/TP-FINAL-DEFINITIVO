@@ -19,14 +19,12 @@ namespace EnemyStates
         public PathfindingChase(
             PathfindingEnemyModel enemyModel,
             PathfindingEnemyController enemyController,
-            OppositeLeaderModel target,
             ITreeNode root,
             Transform Transform,
             ISteering Pursuit)
         {
-            _enemyController = enemyController;
             _enemy = enemyModel;
-            _target = target;
+            _enemyController = enemyController;            
             _root = root;
             _transform = Transform;
             _pursuit = Pursuit;
@@ -35,7 +33,7 @@ namespace EnemyStates
         }
         void InitializedSteering()
         {
-            var pursuit = new Pursuit(_transform, _target, predictionTime);
+            var pursuit = new Pursuit(_transform, _enemy, predictionTime);
             _pursuit = pursuit;
         }
         public Vector3 GetDir()
@@ -50,7 +48,7 @@ namespace EnemyStates
         void MoveToPlayer()
         {
             sbDir = GetDir();
-            bool isLineOfSight = _enemy.IsInSight(_target.transform);
+            bool isLineOfSight = _enemy.IsInSight(_enemy.transform);
             bool isInShootRange = _enemyController.ShootRange();
             _enemy.speed = 3;
             if (isInShootRange)
@@ -65,7 +63,7 @@ namespace EnemyStates
                 //Debug.Log("2");
                 _enemy.CanSeePlayer();
 
-                Vector3 dir = _target.transform.position - _enemy.transform.position;
+                Vector3 dir = _enemy.transform.position - _enemy.transform.position;
                 _enemy.LookDir(sbDir);
                 _enemy.Move(sbDir);
             }

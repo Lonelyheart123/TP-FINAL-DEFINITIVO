@@ -7,18 +7,16 @@ namespace EnemyStates
         ISteering _steering;
         PathfindingEnemyModel _enemy;
         PathfindingEnemyController _enemyController;
-        OppositeLeaderModel oppositeLeader;
-        public PathfindingEscape(PathfindingEnemyModel enemyModel, PathfindingEnemyController enemyController, ISteering flee, OppositeLeaderModel op)
+        public PathfindingEscape(PathfindingEnemyModel enemyModel, PathfindingEnemyController enemyController, ISteering flee)
         {
             _enemy = enemyModel;
             _enemyController = enemyController;
             _steering = flee;
-            oppositeLeader = op;
             InitializedSteering();
         }
         void InitializedSteering()
         {
-            var flee = new Flee(_enemyController.transform, oppositeLeader.transform);
+            var flee = new Flee(_enemyController.transform, _enemy.transform);
             _steering = flee;
         }
         public Vector3 GetDir()

@@ -8,7 +8,7 @@ public class PathfindingEnemyController : MonoBehaviour
     PathfindingEnemyModel _enemy;
     public FSM<states> _fsm;
     public Transform target;
-    public OppositeLeaderModel opLeaderModel;
+    //public OppositeLeaderModel opLeaderModel;
     public AgentController agentController;
 
     public float attackRange;
@@ -21,7 +21,7 @@ public class PathfindingEnemyController : MonoBehaviour
         _enemy = GetComponent<PathfindingEnemyModel>();
         target = GameObject.FindGameObjectWithTag("Leader2").transform;
         agentController= GetComponent<AgentController>();
-        opLeaderModel = FindObjectOfType<OppositeLeaderModel>();
+        //opLeaderModel = FindObjectOfType<OppositeLeaderModel>();
     }
 
     public enum states
@@ -43,9 +43,9 @@ public class PathfindingEnemyController : MonoBehaviour
     void InitializedFSM()
     {
         IState<states> patrol = new PathfindingPatrol<states>(_enemy, target, _root, _enemy._currentSteering);
-        IState<states> chase = new PathfindingChase<states>(_enemy, this, opLeaderModel, _root, _enemy.transform, _enemy._avoidance);
-        IState<states> attack = new PathfindingAttack<states>(_enemy, this, opLeaderModel, dist, dir, _root);
-        IState<states> escape = new PathfindingEscape<states>(_enemy, this,_enemy._currentSteering, opLeaderModel);
+        IState<states> chase = new PathfindingChase<states>(_enemy, this, _root, _enemy.transform, _enemy._avoidance);
+        IState<states> attack = new PathfindingAttack<states>(_enemy, this, dir, _root);
+        IState<states> escape = new PathfindingEscape<states>(_enemy, this,_enemy._currentSteering);
         IState<states> died = new PathfindingDie<states>(_enemy);
 
         patrol.AddTransition(states.Chase, chase);

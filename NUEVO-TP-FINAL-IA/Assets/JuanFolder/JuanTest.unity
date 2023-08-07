@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -785,7 +785,7 @@ MonoBehaviour:
   AllNodes:
   - {fileID: 1737081120}
   - {fileID: 1333089119}
-  leaderModel: {fileID: 1507480122}
+  leaderModel: {fileID: 0}
 --- !u!1 &452798959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,51 +1725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09a3fac09e7bdd43ac2cf6f550a9a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1507480122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5505456452429101724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96514d16aee89c4d9f50fb1792b6bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  rangeInSight: 10
-  angleInSight: 180
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  readyToMove: 0
-  speed: 10
-  rotSpeed: 5
-  _rb: {fileID: 1520353005}
-  isAlive: 1
-  obsRadius: 2
-  obsAngle: 180
-  multiplier: 0.9
-  agentController: {fileID: 423612215}
-  range: 10
-  angle: 180
-  maxLife: 100
-  _currentLife: 100
-  radius: 180
-  walkPointRange: 1
-  _sense: 1
-  speedRot: 10
-  _currentIndex: 1
-  _avoidanceWeight: 1
-  _steeringWeight: 1
-  _predictionTime: 2
-  maxObs: 1
-  damage: 10
-  _walkcounter: 20
-  canSeePlayer: 0
-  isWounded: 0
-  Leader1died: 0
 --- !u!114 &1507480126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,7 +1738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8989362504776149807}
-  opLeaderModel: {fileID: 1507480122}
   agentController: {fileID: 413271422}
   attackRange: 2
 --- !u!114 &1507480127
@@ -1863,22 +1817,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &1520353009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5505456452429101724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f563c264bee9ef448a37bb0f8c2d24e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: {fileID: 1507480127}
-  target: {fileID: 1683267926804782655}
-  agentController: {fileID: 423612215}
-  attackRange: 5
 --- !u!1 &1636225635
 GameObject:
   m_ObjectHideFlags: 0
@@ -10608,7 +10546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5558638713633931261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -64.5, y: -8.933662, z: 26.7}
+  m_LocalPosition: {x: -64.5, y: -8.933662, z: 19.199997}
   m_LocalScale: {x: 2.6617, y: 2.6617, z: 2.6617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10837,7 +10775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339587856493322849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -76.1, y: -8.933662, z: 26.700005}
+  m_LocalPosition: {x: -76.1, y: -8.933662, z: 19.2}
   m_LocalScale: {x: 2.6617, y: 2.6617, z: 2.6617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11111,7 +11049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9060373699872844760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -90.33002, y: -8.933662, z: 26.700005}
+  m_LocalPosition: {x: -90.33002, y: -8.933662, z: 19.2}
   m_LocalScale: {x: 2.6617, y: 2.6617, z: 2.6617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11904,8 +11842,6 @@ GameObject:
   - component: {fileID: 9110632955308689011}
   - component: {fileID: 7333536227039005506}
   - component: {fileID: 1520353005}
-  - component: {fileID: 1507480122}
-  - component: {fileID: 1520353009}
   m_Layer: 7
   m_Name: Personaje (6)
   m_TagString: Leader2

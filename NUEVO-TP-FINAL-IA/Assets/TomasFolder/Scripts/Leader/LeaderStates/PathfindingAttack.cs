@@ -8,20 +8,16 @@ namespace EnemyStates
     {
         PathfindingEnemyModel _enemy;
         PathfindingEnemyController _enemyController;
-        OppositeLeaderModel _opponent;
-        float _distance = 0;
         float time = 0.5f;
         float _counter = 0;
         Vector3 _dir;
         public EnemyBullet bulletprefab;
         ITreeNode _root;
 
-        public PathfindingAttack(PathfindingEnemyModel enemyModel, PathfindingEnemyController enemyController, OppositeLeaderModel oppositeLeader, float distance, Vector3 dir, ITreeNode root)
+        public PathfindingAttack(PathfindingEnemyModel enemyModel, PathfindingEnemyController enemyController, Vector3 dir, ITreeNode root)
         {
             _enemy = enemyModel;
             _enemyController = enemyController;
-            _opponent = oppositeLeader;
-            _distance = distance;
             _dir = dir;
             _root = root;
         }
@@ -35,7 +31,7 @@ namespace EnemyStates
             _counter += Time.deltaTime;
             if (_counter >= time && _enemyController.ShootRange() == true)
             {
-                _opponent._currentLife -= _enemy.damage;
+                _enemy._currentLife -= _enemy.damage;
                 //_dir = (_target.transform.position - _enemy.transform.position).normalized;
                 //_enemy.Attack(_dir);
                 _counter = 0;
