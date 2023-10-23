@@ -25,6 +25,7 @@ namespace EnemyStates
         public override void Awake()
         {
             _enemy.agentController.AStarRun();
+            _enemy.agentController.AStarRun2();
             _enemy.readyToMove = true;
         }
         public override void Execute()

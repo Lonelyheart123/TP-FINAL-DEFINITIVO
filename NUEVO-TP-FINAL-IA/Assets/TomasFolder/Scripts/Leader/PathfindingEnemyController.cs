@@ -8,6 +8,7 @@ public class PathfindingEnemyController : MonoBehaviour
     PathfindingEnemyModel _enemy;
     public FSM<states> _fsm;
     public Transform target;
+    public Transform otherTarget;
     //public OppositeLeaderModel opLeaderModel;
     public AgentController agentController;
 
@@ -20,7 +21,8 @@ public class PathfindingEnemyController : MonoBehaviour
     {
         _enemy = GetComponent<PathfindingEnemyModel>();
         target = GameObject.FindGameObjectWithTag("Leader2").transform;
-        agentController= GetComponent<AgentController>();
+        otherTarget = GameObject.FindGameObjectWithTag("Leader1").transform;
+        agentController = GetComponent<AgentController>();
         //opLeaderModel = FindObjectOfType<OppositeLeaderModel>();
     }
 

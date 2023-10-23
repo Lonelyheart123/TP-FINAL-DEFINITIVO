@@ -651,6 +651,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalNode: {fileID: 575983605}
   startNode: {fileID: 941886649}
+  goalNode2: {fileID: 1333089120}
+  startNode2: {fileID: 1737081121}
   firstEscapeNode: {fileID: 1390482954}
   escapeNode: {fileID: 941886649}
   radius: 2
@@ -785,7 +787,7 @@ MonoBehaviour:
   AllNodes:
   - {fileID: 1737081120}
   - {fileID: 1333089119}
-  leaderModel: {fileID: 0}
+  leaderModel: {fileID: 9169366302175123162}
 --- !u!1 &452798959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8989362504776149807}
+  otherTarget: {fileID: 0}
   agentController: {fileID: 413271422}
   attackRange: 2
 --- !u!114 &1507480127
@@ -11842,6 +11845,9 @@ GameObject:
   - component: {fileID: 9110632955308689011}
   - component: {fileID: 7333536227039005506}
   - component: {fileID: 1520353005}
+  - component: {fileID: 9169366302175123164}
+  - component: {fileID: 9169366302175123163}
+  - component: {fileID: 9169366302175123162}
   m_Layer: 7
   m_Name: Personaje (6)
   m_TagString: Leader2
@@ -17473,7 +17479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5505456452429101724}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 79.55, y: -18.670227, z: 18.3}
+  m_LocalPosition: {x: 77.1, y: -18.670227, z: 21.2}
   m_LocalScale: {x: 2.8865914, y: 2.8865914, z: 2.8865914}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17926,6 +17932,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5505456452429101724}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &9169366302175123162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505456452429101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543d2975a6118ba49b0e752814843d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  rangeInSight: 10
+  angleInSight: 180
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  readyToMove: 0
+  speed: 10
+  rotSpeed: 5
+  _rb: {fileID: 1520353005}
+  isAlive: 1
+  obsRadius: 2
+  obsAngle: 180
+  multiplier: 0.9
+  agentController: {fileID: 413271422}
+  range: 10
+  angle: 180
+  maxLife: 100
+  _currentLife: 100
+  radius: 180
+  walkPointRange: 1
+  _sense: 1
+  speedRot: 10
+  _currentIndex: 1
+  _avoidanceWeight: 1
+  _steeringWeight: 1
+  _predictionTime: 2
+  maxObs: 3
+  damage: 10
+  _walkcounter: 20
+  canSeePlayer: 0
+  isWounded: 0
+  Leader1died: 0
+--- !u!114 &9169366302175123163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505456452429101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225576337bd5d6f478c95195f4bdf378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1683267926804782655}
+  otherTarget: {fileID: 0}
+  agentController: {fileID: 413271422}
+  attackRange: 2
+--- !u!114 &9169366302175123164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505456452429101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09a3fac09e7bdd43ac2cf6f550a9a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9192066146312239758
 GameObject:
   m_ObjectHideFlags: 0

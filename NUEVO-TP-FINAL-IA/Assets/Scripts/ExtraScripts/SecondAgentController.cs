@@ -13,7 +13,7 @@ public class SecondAgentController : MonoBehaviour
     public LayerMask mask;
     public AStar<Node> _ast;
     public List<Transform> AllNodes;
-    public OppositeLeaderModel leaderModel;
+    public PathfindingEnemyModel leaderModel;
 
     int randomNode;
     private void Awake()

@@ -61,6 +61,7 @@
     <Compile Include="Assets\TomasFolder\Scripts\OppositeLeader\OppositeLeaderStates\OppositeLeaderDie.cs" />
     <Compile Include="Assets\TomasFolder\Scripts\OppositeLeader\OppositeLeaderStates\OppositeLeaderPatrol.cs" />
     <Compile Include="Assets\TomasFolder\Scripts\Leader\LeaderStates\PathfindingAttack.cs" />
+    <Compile Include="Assets\TomasFolder\Scripts\OppositeLeader\OppositeLeaderPath.cs" />
     <Compile Include="Assets\TomasFolder\Scripts\INode.cs" />
     <Compile Include="Assets\TomasFolder\Scripts\OppositeLeader\OppositeLeaderStates\OppositeLeaderEscape.cs" />
     <Compile Include="Assets\Scripts\FlockingScript\Predator.cs" />

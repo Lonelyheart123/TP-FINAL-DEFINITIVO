@@ -8,6 +8,8 @@ public class AgentController : MonoBehaviour
 {   
     public Node goalNode;
     public Node startNode;
+    public Node goalNode2;
+    public Node startNode2;
     public Node firstEscapeNode;
     public Node escapeNode;
     public float radius;
@@ -37,6 +39,15 @@ public class AgentController : MonoBehaviour
 
         leaderModel.SetWayPoints(path);
     }
+    public void AStarRun2()
+    {
+        var start = startNode2;
+        if (start == null) return;
+
+        var path = _ast.Run(start, Satisfies2, GetConections, GetCost, Heuristic2, 500);
+
+        leaderModel.SetWayPoints(path);
+    }
     public void EscapeRun()
     {
         randomNode = Random.Range(0, AllNodes.Count);
@@ -53,6 +64,13 @@ public class AgentController : MonoBehaviour
         float multiplierDistance = 2;
         float cost = 0;
         cost += Vector3.Distance(curr.transform.position, goalNode.transform.position) * multiplierDistance;
+        return cost;
+    }
+    float Heuristic2(Node curr)
+    {
+        float multiplierDistance = 2;
+        float cost = 0;
+        cost += Vector3.Distance(curr.transform.position, goalNode2.transform.position) * multiplierDistance;
         return cost;
     }
     float HeuristicEscape(Node curr)
@@ -80,6 +98,10 @@ public class AgentController : MonoBehaviour
         return curr.neighbours;
     }
     bool Satisfies(Node curr)
+    {
+        return curr == goalNode;
+    }
+    bool Satisfies2(Node curr)
     {
         return curr == goalNode;
     }

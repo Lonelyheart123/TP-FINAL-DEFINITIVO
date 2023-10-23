@@ -407,6 +407,7 @@
 "Assets/TomasFolder/Scripts/Minions/OppossingMinions/OpposingMinionModel.cs"
 "Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderController.cs"
 "Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderModel.cs"
+"Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderPath.cs"
 "Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderStates/OppositeLeaderAttack.cs"
 "Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderStates/OppositeLeaderChase.cs"
 "Assets/TomasFolder/Scripts/OppositeLeader/OppositeLeaderStates/OppositeLeaderDie.cs"

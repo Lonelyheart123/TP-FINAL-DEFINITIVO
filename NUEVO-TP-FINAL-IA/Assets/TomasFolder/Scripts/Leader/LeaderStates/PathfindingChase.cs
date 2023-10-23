@@ -6,7 +6,6 @@ namespace EnemyStates
 {
     public class PathfindingChase<T> : State<T>
     {
-        OppositeLeaderModel _target;
         PathfindingEnemyModel _enemy;
         PathfindingEnemyController _enemyController;
         public float predictionTime = 1;
