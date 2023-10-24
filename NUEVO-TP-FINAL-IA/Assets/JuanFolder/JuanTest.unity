@@ -687,7 +687,7 @@ MonoBehaviour:
   - {fileID: 1820451077}
   - {fileID: 494712203}
   - {fileID: 16358434}
-  leaderModel: {fileID: 1507480127}
+  leaderModel: {fileID: 9169366302175123162}
 --- !u!4 &413271423
 Transform:
   m_ObjectHideFlags: 0
@@ -17989,8 +17989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225576337bd5d6f478c95195f4bdf378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1683267926804782655}
-  otherTarget: {fileID: 0}
+  target: {fileID: 0}
+  otherTarget: {fileID: 1683267926804782655}
   agentController: {fileID: 413271422}
   attackRange: 2
 --- !u!114 &9169366302175123164
